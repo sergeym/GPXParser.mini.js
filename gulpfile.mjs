@@ -19,7 +19,7 @@ gulp.task('minify', function(){
 });
 
 gulp.task('doc', async function (cb) {
-    const { default: config } = await import('./jsdoc.json', { with: { type: 'json' } });
+    const { default: config } = await import('./jsdoc.json', { assert: { type: 'json' } });
 
     return gulp.src(['README.md', './src/GPXParser.js'], {read: false}).pipe(jsdoc(config, cb));
 });
