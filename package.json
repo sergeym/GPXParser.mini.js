@@ -1,14 +1,23 @@
 {
-  "name": "gpxparser",
+  "name": "@s5m/GPXParser-mini",
   "version": "3.0.8",
   "description": "GPX file parser",
   "main": "dist/GPXParser.min.js",
+  "types": "index.d.ts",
+  "files": [
+    "dist/GPXParser.min.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "nyc mocha"
+    "test": "nyc mocha",
+    "build": "gulp minify",
+    "prepublishOnly": "npm test && npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Luuka/GPXParser.js.git"
+    "url": "git+https://github.com/sergeym/GPXParser.mini.js.git"
   },
   "keywords": [
     "gpx",
@@ -20,9 +29,9 @@
   "author": "Lucas Trebouet Voisin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Luuka/GPXParser.js/issues"
+    "url": "https://github.com/sergeym/GPXParser.mini.js/issues"
   },
-  "homepage": "https://github.com/Luuka/GPXParser.js#readme",
+  "homepage": "https://github.com/sergeym/GPXParser.mini.js#readme",
   "dependencies": {},
   "devDependencies": {
     "gulp": "^5.0.0",

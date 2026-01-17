@@ -21,7 +21,7 @@ For more information about gpx format see http://www.topografix.com/gpx_manual.a
 # How to do
 
 ### Install from npm
-`npm install --save gpxparser` 
+`npm install --save @s5m/GPXParser-mini` 
 
 ### Load JavaScript file
 
@@ -32,7 +32,7 @@ From an HTML document (browser):
 
 From a node.js script:
 ```js
-let gpxParser = require('gpxparser');
+let gpxParser = require('@s5m/GPXParser-mini');
 ```
 
 **Note for Node.js users:** This library uses the browser's native `DOMParser` API. When using in Node.js, you need to provide a DOM implementation. Install `jsdom` and set it up in your environment:
@@ -44,7 +44,7 @@ npm install jsdom jsdom-global
 Then in your Node.js code:
 ```js
 require('jsdom-global')();
-let gpxParser = require('gpxparser');
+let gpxParser = require('@s5m/GPXParser-mini');
 ```
 
 ### Create and parse file
