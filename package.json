@@ -24,17 +24,16 @@
   },
   "homepage": "https://github.com/Luuka/GPXParser.js#readme",
   "dependencies": {
-    "jsdom": "^15.2.1",
+    "jsdom": "^24.0.0",
     "jsdom-global": "^3.0.2"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-jsdoc3": "^2.0.0",
-    "gulp-minify": "^3.1.0",
-    "gulp-mocha": "^7.0.2",
-    "jsdoc": "^3.6.3",
-    "jsdom": "^15.2.1",
-    "mocha": "^6.2.2",
-    "nyc": "^15.0.0"
+    "gulp": "^5.0.0",
+    "gulp-jsdoc3": "^3.0.0",
+    "gulp-minify": "^3.0.0",
+    "gulp-mocha": "^10.0.0",
+    "jsdoc": "^4.0.0",
+    "mocha": "^10.0.0",
+    "nyc": "^17.0.0"
   }
 }
