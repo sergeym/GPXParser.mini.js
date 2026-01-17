@@ -4,6 +4,8 @@
 
 ![](https://github.com/Luuka/gpx-parser/workflows/master-ci/badge.svg) ![](https://github.com/Luuka/gpx-parser/workflows/develop-ci/badge.svg)
 
+> **Note:** This package is published as `@s5m/GPXParser-mini` on npm. It is a fork of the original [`gpxparser`](https://www.npmjs.com/package/gpxparser) package by [Luuka](https://github.com/Luuka/GPXParser.js).
+
 *GPXParser.js* is a lightweight JS library wich parse .gpx file and get or compute various datas like
 - GPX metadata
 - total and cumulate distances
@@ -21,7 +23,7 @@ For more information about gpx format see http://www.topografix.com/gpx_manual.a
 # How to do
 
 ### Install from npm
-`npm install --save gpxparser` 
+`npm install --save @s5m/GPXParser-mini` 
 
 ### Load JavaScript file
 
@@ -32,7 +34,7 @@ From an HTML document (browser):
 
 From a node.js script:
 ```js
-let gpxParser = require('gpxparser');
+let gpxParser = require('@s5m/GPXParser-mini');
 ```
 
 **Note for Node.js users:** This library uses the browser's native `DOMParser` API. When using in Node.js, you need to provide a DOM implementation. Install `jsdom` and set it up in your environment:
@@ -44,7 +46,7 @@ npm install jsdom jsdom-global
 Then in your Node.js code:
 ```js
 require('jsdom-global')();
-let gpxParser = require('gpxparser');
+let gpxParser = require('@s5m/GPXParser-mini');
 ```
 
 ### Create and parse file
