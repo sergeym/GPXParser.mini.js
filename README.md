@@ -4,6 +4,8 @@
 
 ![](https://github.com/Luuka/gpx-parser/workflows/master-ci/badge.svg) ![](https://github.com/Luuka/gpx-parser/workflows/develop-ci/badge.svg)
 
+> **Note:** This package is published as `@s5m/GPXParser-mini` on npm. It is a fork of the original [`gpxparser`](https://www.npmjs.com/package/gpxparser) package by [Luuka](https://github.com/Luuka/GPXParser.js).
+
 *GPXParser.js* is a lightweight JS library wich parse .gpx file and get or compute various datas like
 - GPX metadata
 - total and cumulate distances
