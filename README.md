@@ -35,10 +35,10 @@ From a node.js script:
 let gpxParser = require('gpxparser');
 ```
 
-**Note for Node.js users:** This library uses the browser's native `DOMParser` API. When using in Node.js, you need to provide a DOM implementation. Install `jsdom` as a dev dependency and set it up in your environment:
+**Note for Node.js users:** This library uses the browser's native `DOMParser` API. When using in Node.js, you need to provide a DOM implementation. Install `jsdom` and set it up in your environment:
 
 ```bash
-npm install --save-dev jsdom jsdom-global
+npm install jsdom jsdom-global
 ```
 
 Then in your Node.js code:

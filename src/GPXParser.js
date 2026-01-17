@@ -22,8 +22,8 @@ gpxParser.prototype.parse = function (gpxstring) {
     let keepThis = this;
 
     // Use native DOMParser in browser, or get it from global scope in Node.js
-    let DOMParserConstructor = typeof window !== 'undefined' && window.DOMParser 
-        ? window.DOMParser 
+    let DOMParserConstructor = typeof window !== 'undefined' && window.DOMParser
+        ? window.DOMParser
         : (typeof DOMParser !== 'undefined' ? DOMParser : null);
     
     if (!DOMParserConstructor) {
