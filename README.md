@@ -25,13 +25,25 @@ For more information about gpx format see http://www.topografix.com/gpx_manual.a
 
 ### Load JavaScript file
 
-From an HTML document :
+From an HTML document (browser):
 ```html
 <script src="./js/GPXParser.js"></script>
 ```
 
-From a node.js script :
+From a node.js script:
 ```js
+let gpxParser = require('gpxparser');
+```
+
+**Note for Node.js users:** This library uses the browser's native `DOMParser` API. When using in Node.js, you need to provide a DOM implementation. Install `jsdom` and set it up in your environment:
+
+```bash
+npm install jsdom jsdom-global
+```
+
+Then in your Node.js code:
+```js
+require('jsdom-global')();
 let gpxParser = require('gpxparser');
 ```
 

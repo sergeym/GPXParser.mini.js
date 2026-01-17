@@ -21,7 +21,16 @@ let gpxParser = function () {
 gpxParser.prototype.parse = function (gpxstring) {
     let keepThis = this;
 
-    let domParser = new window.DOMParser();
+    // Use native DOMParser in browser, or get it from global scope in Node.js
+    let DOMParserConstructor = typeof window !== 'undefined' && window.DOMParser
+        ? window.DOMParser
+        : (typeof DOMParser !== 'undefined' ? DOMParser : null);
+    
+    if (!DOMParserConstructor) {
+        throw new Error('DOMParser is not available. In Node.js, ensure jsdom or equivalent is loaded.');
+    }
+    
+    let domParser = new DOMParserConstructor();
     this.xmlSource = domParser.parseFromString(gpxstring, 'text/xml');
 
     let metadata = this.xmlSource.querySelector('metadata');
@@ -459,7 +468,14 @@ gpxParser.prototype.toGeoJSON = function () {
     return GeoJSON;
 };
 
+// For Node.js environments, optionally load jsdom if available
 if(typeof module !== 'undefined'){
-    require('jsdom-global')();
+    // Try to load jsdom-global only if it's available (for testing)
+    // In browser bundlers, this won't execute
+    try {
+        require('jsdom-global')();
+    } catch(e) {
+        // jsdom-global not available, DOMParser must be provided externally
+    }
     module.exports = gpxParser;
 }
