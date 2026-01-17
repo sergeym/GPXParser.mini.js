@@ -1,7 +1,7 @@
-var gulp = require('gulp'),
-    minify = require('gulp-minify'),
-    jsdoc = require('gulp-jsdoc3'),
-    mocha = require('gulp-mocha');
+import gulp from 'gulp';
+import minify from 'gulp-minify';
+import jsdoc from 'gulp-jsdoc3';
+import mocha from 'gulp-mocha';
 
 gulp.task('test', function() {
     return gulp.src('./test/test.js', {read: false}).pipe(mocha({reporter: 'nyan'}))
@@ -18,8 +18,8 @@ gulp.task('minify', function(){
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('doc', function (cb) {
-    var config = require('./jsdoc.json');
+gulp.task('doc', async function (cb) {
+    const { default: config } = await import('./jsdoc.json', { with: { type: 'json' } });
 
     return gulp.src(['README.md', './src/GPXParser.js'], {read: false}).pipe(jsdoc(config, cb));
 });
